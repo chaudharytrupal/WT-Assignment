@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Feedback-Form</title>
+
+<style>
+body{
+	background-image: url(2.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size:cover;
+}
+.myForm {
+font-family: "Lucida Sans Unicode";
+font-size: 0.8em;
+width: 30em;
+padding: 1em;
+border: 1px solid #ccc;
+color: black;
+background-color: white;
+}
+.form{
+	position: absolute;
+	left: 38%;
+	top: 1%;
+}
+.col{
+	border: 5px solid black;
+	color: white;
+	font-family: cursive;
+}
+.myForm * {
+box-sizing: border-box;
+
+}
+
+.myForm fieldset {
+border: none;
+padding: 0;
+}
+
+.myForm legend,
+.myForm label {
+
+font-weight: bold;
+}
+
+.myForm label.choice {
+font-size: 0.9em;
+font-weight: normal;
+}
+
+.myForm label {
+text-align: left;
+display: block;
+}
+
+.myForm input[type="text"],
+.myForm input[type="tel"],
+.myForm input[type="email"],
+.myForm input[type="datetime-local"],
+.myForm select,
+.myForm textarea {
+float: right;
+width: 60%;
+border: 1px solid #ccc;
+font-family: "Lucida Sans Unicode";
+font-size: 1em;
+padding: 0.3em;
+}
+
+.myForm textarea {
+height: 100px;
+}
+
+.myForm input[type="radio"],
+.myForm input[type="checkbox"] {
+margin-left: 40%;
+}
+
+.myForm button {
+padding: 1em;
+border-radius: 0.5em;
+background:lightgrey ;
+border: none;
+font-weight: bold;
+margin-left: 40%;
+margin-top: 1.8em;
+}
+
+.myForm button:hover {
+background: grey;
+cursor: pointer;
+
+}
+
+</style>
+
+</head>
+<body>
+	<div class="background"></div>
+<div class="form">
+<fieldset class="col">
+	<legend><h1>F E E D B A C K</h1></legend>
+<form class="myForm" id="name"name="myForm"method="post" onsubmit="return Trupal()">
+
+<p>
+<label>Name
+<input type="text" name="customer_name" placeholder="Trupal Chaudhary" id="n1" onblur="Trupal()">
+</label> 
+</p>
+
+<p>
+<label>Phone 
+<input type="tel" name="phone_number" placeholder="+91 xxxxxxxxxx">
+</label>
+</p>
+
+<p>
+<label>Email 
+<input type="email" name="email_address" placeholder="abc@gmail.com">
+</label>
+</p>
+
+<fieldset>
+<legend>Gender</legend>
+<p><label class="choice"> <input type="radio" name="gender" value="car"> Male </label></p>
+<p><label class="choice"> <input type="radio" name="gender" value="van"> Female </label></p>
+<p><label class="choice"> <input type="radio" name="gender" value="van"> Other </label></p>
+</fieldset>
+
+<fieldset>
+<legend>Feedback</legend>
+<p><label class="choice"> <input type="radio" name="fb" value="car"> Poor </label></p>
+<p><label class="choice"> <input type="radio" name="fb" value="van"> Good </label></p>
+<p><label class="choice"> <input type="radio" name="fb" value="vane"> Very Good </label></p>
+<p><label class="choice"> <input type="radio" name="fb" value="vane"> Excellent </label></p>
+</fieldset>
+
+
+<p>
+<label>Course Name
+<select id="pickup_course" name="pickup_course">
+<option value="" selected="selected">Select One</option>
+<option value="office" >DBMS</option>
+<option value="town_hall" >DSA</option>
+<option value="guess" >OS</option>
+</select>
+</label> 
+</p>
+
+<p>
+<label>Teacher name
+<input type="text" name="pickup_name" list="teachers">
+</label>
+<datalist id="teachers">
+<option value="Arpita Shah"></option>
+<option value="Ronak Patel"></option>
+<option value="Nikita Bhatt"></option>
+</datalist>
+</p>
+
+<p>
+<label>Other
+	<p></p>
+<textarea name="comments" maxlength="500" placeholder="comments"></textarea>
+</label>
+</p>
+
+<p><button onclick="myFunction()" id="demo">Submit Feedback</button></p>
+
+</form>
+</fieldset>
+</div>
+
+</body>
+<script>
+	function Trupal()
+{
+    var name = document.forms["myForm"]["customer_name"];
+    var phone = document.forms["myForm"]["phone_number"];
+    var email = document.forms["myForm"]["email_address"];
+    var feedback = document.forms["myForm"]["fb"];
+    var cname = document.forms["myForm"]["pickup_course"];
+    var tname = document.forms["myForm"]["pickup_name"];
+
+    if (name.value == "")
+    {
+       window.alert("Please Enter Your Name.");
+       name.focus();
+       return false;
+    }
+    else{
+        var x=document.getElementById('name').value;
+    	  document.write("Name:"+x);
+    }
+    if (phone.value == "")
+    {
+       window.alert("Please Enter Your Phone Number.");
+       phone.focus();
+       return false;
+    }
+     if (email.value == "")
+    {
+       window.alert("Please Enter Your email address.");
+       email.focus();
+       return false;
+    }
+     if (feedback.value == "")
+    {
+       window.alert("Please Enter Your email address.");
+       feedback.focus();
+       return false;
+    }
+    if (cname.value == "")
+    {
+       window.alert("Please Enter Your Course Name.");
+       cname.focus();
+       return false;
+    }
+    if (tname.value == "")
+    {
+       window.alert("Please Enter Your Teacher Name.");
+       tname.focus();
+       return false;
+    }
+}
+</script>
+</html>
