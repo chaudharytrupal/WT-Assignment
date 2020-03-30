@@ -1,17 +1,10 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SIGN UP FORM</title>
+	<title>18CE012</title>
 </head>
 <style>
-	body{
-			background:;
-			background-size: cover;
-			font-family: cursive;
-	}
-
+	
 	.wrap{
 			max-width: 380px;
 			border-radius: 20px;
